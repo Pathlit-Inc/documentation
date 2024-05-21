@@ -1,0 +1,25 @@
+---
+title: 'Open AI GPT'
+description: "User Open AI's Generative Pre-Trained Transformer Models"
+---
+
+The Open AI GPT node allows you to integrate Open AI's Llama models into your workflows.
+
+The models available under this family are:
+
+- ```GPT 3```: The most capable openly available LLM to date, with a context window of 128K (equivalent of more than 300 pages of text in a single prompt).
+- ```GPT 4```: A bigger and better 'most capable openly available LLM to date'.
+
+### Fields in Open AI GPT node
+
+- **System:** This field box is where you specify how you’d like the LLM to respond (e.g., tone, style, language, etc.). Typically, you’d specify things that won’t change throughout the conversation with the user. This setting is part of the advanced settings that can be accessed by clicking the gear icon on the node.
+- **Prompt:** This field box is where you especify where the question from the user is coming from, what context to consider, etc. Connected inputs will pop up as labels below the prompt. A warning will appear if you haven’t specify each input in the prompt. You include inputs by using curly brackets (e.g., ```{in-0}, {embed-0}```).
+- **Formatted prompt:** You will see this field after running the workflow. You will see all inputs substituted by their new text values (e.g., question from user, chunks of information from your knowledge bases, etc.).
+- **Cost:** On the bottom left corner, you will see the cost of the execution from the API that the model is hosted on. Try to use different providers to compare costs.
+- **Latency:** Additionally, on the bottom right corner, you will see the latency of the node: how much time it took to run it.
+
+<Note>
+
+Check the **_Enable Conversation History_** box to allow the workflow to remember all your previous messages and have context when using as a chatbot.
+
+</Note>

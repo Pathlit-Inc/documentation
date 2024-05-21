@@ -55,12 +55,15 @@
     {
       "group": "Pathways",
       "pages": [
-        "pathways/markdown",
-        "pathways/code",
-        "pathways/images",
-        "pathways/settings",
-        "pathways/navigation",
-        "pathways/reusable-snippets"
+        "pathways/input",
+        "pathways/text-variable",
+        "pathways/embedding-search",
+        "pathways/webpage-content-extractor",
+        "pathways/output",
+        "pathways/email",
+        "pathways/notion-page-output",
+        "pathways/llama",
+        "pathways/openai-gpt"
       ]
     },
     {
