@@ -1,0 +1,39 @@
+# Ignore Next.js build output
+.next/
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore development server logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.kate-swp/
+*.swp
+*.swo
+
+# Ignore system and temporary files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log
+*.cache
+*.out
+*.pid
+*.env.local
+.env
+
+# Ignore build artifacts and compiled files
+/out/
+/build/
+/.next/
+/public/

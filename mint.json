@@ -57,12 +57,12 @@
       "pages": [
         "pathways/input",
         "pathways/text-variable",
-        "pathways/embedding-search",
-        "pathways/webpage-content-extractor",
+        "pathways/embed-search",
+        "pathways/webpage-data",
         "pathways/output",
         "pathways/email",
         "pathways/notion-page-output",
-        "pathways/llama",
+        "pathways/llama-llm",
         "pathways/openai-gpt"
       ]
     },
