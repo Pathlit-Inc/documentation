@@ -1,0 +1,84 @@
+---
+title: 'Airtable Input Node'
+description: 'Import table data from Airtable into your workflow'
+---
+
+## Overview
+
+The Airtable Input Node is a component of the Pathlit workflow builder that allows users to import data from an Airtable table. This node connects to your Airtable account and retrieves the specified table's records, making it easy to incorporate Airtable data into your workflows. Users can also choose to include metadata for citations if needed.
+
+## Configuration Parameters
+
+To set up the Airtable Input Node, you need to configure the following parameters:
+
+* **Path to Table**:
+
+    The table you want to import from Airtable. This should be in the format `base_id/table_id`.
+
+* **Include Document Metadata for Citations**:
+
+    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+
+## Expected Inputs and Outputs
+
+- **Inputs**:
+
+  This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+
+  The output will be a single string that contains the records retrieved from the specified Airtable table. If the metadata option is selected, the output will include formatted citations.
+
+## Use Case Examples
+
+1. **Data Import for Reporting**:
+
+    Suppose you are managing a project and have all your tasks listed in an Airtable table. You can use the Airtable Input Node to import this data into your workflow, which can then be analyzed or reported on in another part of the application.
+
+2. **Citation Management**:
+
+    If you are working on a research project and need to keep track of sources, you can use this node to pull in data from an Airtable table that contains your references. By selecting the metadata option, you can ensure that your citations are properly formatted for later use.
+
+3. **Dynamic Content Generation**:
+
+    For marketing campaigns, you might have a list of leads stored in Airtable. You can use this node to import that list into your workflow, enabling you to personalize outreach efforts based on the data retrieved.
+
+## Error Handling and Troubleshooting
+
+- **Network Issues**:
+
+    If there are connectivity problems, you may experience delays or failures in data retrieval. Check your internet connection and ensure that Airtable's services are operational.
+
+By following this documentation, you should be able to effectively configure and utilize the Airtable Input Node in your Gen AI workflow applications.
+
+## Relevant Nodes
+
+<CardGroup>
+  <Card
+    title="Airtable Output Node"
+    href="/pathways/airtable-out.mdx"
+  >
+    Explore how to export data back to Airtable.
+  </Card>
+
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input.mdx"
+  >
+    Import files and data from Google Drive into your workflow.
+  </Card>
+
+  <Card
+    title="Web Extract Node"
+    href="/pathways/web-extract.mdx"
+  >
+    Retrieve data from web pages and integrate it into your workflow.
+  </Card>
+
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send.mdx"
+  >
+    Send messages to Slack channels based on your workflow data.
+  </Card>
+</CardGroup>
