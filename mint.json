@@ -40,11 +40,6 @@
       "name": "Documentation",
       "icon": "book-open",
       "url": "get-started/introduction"
-    },
-    {
-      "name": "API Reference",
-      "icon": "code",
-      "url": "api-reference/introduction"
     }
   ],
   "navigation": [
@@ -87,20 +82,6 @@
         "pathways/web-search",
         "pathways/workflow-batch-invocation",
         "pathways/workflow-invocation"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
       ]
     }
   ],
