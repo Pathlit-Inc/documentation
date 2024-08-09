@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Pathlit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/logo.svg",
+    "light": "/logo/logo-long.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/logo.svg",
   "colors": {
     "primary": "#1A2024",
     "light": "#FFFFFF",
