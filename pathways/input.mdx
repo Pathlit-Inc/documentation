@@ -1,3 +1,83 @@
 ---
-title: 'Input'
+title: 'Input Node'
+description: 'Capture input data for your workflow'
 ---
+
+## Overview
+The Input Node is a crucial component of the Pathlit workflow builder that enables users to pass input data to workflow executions. This node allows you to define the name, type, and number of inputs that can be utilized in the workflow.
+
+The input node is not necessary for all workflows. Some workflows may not require any input data, while others may need specific inputs to function. By using the Input Node, you can pass in the necessary data at the beginning of the workflow and feed it to subsequent nodes for processing.
+
+Clicking on the **Run Workflow** button on the top right corner of the workflow editor, a side panel will open where you can provide the input data. The input data will be passed to the workflow for execution.
+
+<Note>
+To make a chatbot workflow, you need to have exactly one Input Node with exactly one input configured. This is necessary as it captures the user message and passes it to the rest of the workflow for generating responses.
+</Note>
+
+<Info>
+Currently, only text input type is supported. Other input types like audio, video, and files will be supported in future updates.
+</Info>
+
+## Configuration Parameters
+
+To set up the Input Node, you need to configure the following parameters:
+
+* **Workflow Inputs**:
+
+    A list of inputs that you want to capture for your workflow. Each input can be defined with a name and type.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+    This node does not require any specific inputs from other nodes in the workflow because it is the node providing input data to the workflow.
+
+- **Outputs**:
+
+    Each input defined in the configuration will be available as an output handle for the node. Each output value will be the input data provided by the user at the start of the workflow execution.
+
+## Use Case Examples
+1. **Chatbot**:
+
+    Chatbot workflow takes in user messages as input and generates responses based on the input. The Input Node captures the user message and passes it to the rest of the workflow for processing.
+
+2. **Create Blogs from Topics**:
+
+    To create a workflow that generates blog posts based on user-provided topics, the Input Node can be used to capture the topic input. The topic can then be passed to an LLM node to generate the blog content.
+
+## Error Handling and Troubleshooting
+- **Missing Inputs**:
+
+    If an input defined in the workflow configuration is not found during execution, an error will be raised indicating that the input is missing. Ensure that all necessary inputs are provided before running the workflow.
+
+If you encounter any issues with the Input Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import table data from Airtable into your workflow
+  </Card>
+
+  <Card
+    title="Airtable Output Node"
+    href="/pathways/airtable-output"
+  >
+    Export data back to Airtable from your workflow
+  </Card>
+
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Capture incoming emails as input for your workflow
+  </Card>
+
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+</CardGroup>

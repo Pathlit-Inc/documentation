@@ -1,0 +1,70 @@
+---
+title: 'Document Summarizer Node'
+description: 'Create a concise summary of the uploaded documents.'
+---
+
+## Overview
+The Document Summarizer Node is a powerful tool in the Pathlit workflow builder that allows users to create concise summaries of uploaded documents. By utilizing advanced language models, this node processes the content of your documents and generates a clear and brief summary, making it easier to digest information quickly.
+
+## Configuration Parameters
+
+To set up the Document Summarizer Node, you need to configure the following parameters:
+
+* **Model**:
+
+    The language model you wish to use for summarization.
+
+* **Upload File**:
+
+    The document or documents that you want to summarize. You can upload multiple files.
+
+* **Temperature**:
+
+    A value that controls the randomness of the output. A lower value results in more focused and deterministic summaries, while a higher value allows for more creative outputs.
+
+* **Summarization Length**:
+
+    A description of how long you want the summary to be, such as "in 5 to 6 sentences".
+
+### Advanced Settings
+
+* **Max Tokens**:
+
+    The maximum length of the output summary in tokens.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  This node does not take in any inputs from the workflow.
+
+- **Outputs**:
+  The output will be a single string that contains the summary of the uploaded documents.
+
+## Use Case Examples
+1. **Research Summaries**:
+
+    If you have a collection of research papers, you can upload them to the Document Summarizer Node to quickly generate summaries. This helps in understanding the key points without reading the entire documents.
+
+2. **Meeting Notes**:
+
+    After a long meeting, you may have detailed notes. Use this node to summarize those notes into actionable items or a brief overview, making it easier to share with team members.
+
+3. **Content Creation**:
+
+    For content marketers, summarizing long articles or reports can help in creating concise content for newsletters or social media posts.
+
+## Error Handling and Troubleshooting
+- **No document to summarize**:
+
+    If you see a message indicating "No document to summarize," make sure that at least one document is uploaded before executing the node.
+
+If you encounter any issues with the Document Summarizer Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Audio Transcription Node"
+    href="/pathways/audio-transcription"
+  >
+    Convert audio files into text format
+  </Card>
+</CardGroup>

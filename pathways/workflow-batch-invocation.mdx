@@ -1,0 +1,75 @@
+---
+title: 'Workflow Batch Invocation Node'
+description: 'Run a selected workflow on each item in a list'
+---
+
+## Overview
+The Workflow Batch Invocation Node is a powerful component within the Pathlit workflow builder. It allows users to execute a selected workflow for each item in a provided list. This node is particularly useful for scenarios where repetitive tasks need to be performed on multiple data points, such as processing items in bulk or automating workflows based on list data.
+
+## Configuration Parameters
+
+To set up the Workflow Batch Invocation Node, you need to configure the following parameters:
+
+* **Workflow**:
+
+    Select a deployed workflow that you want to run for each item in the list.
+
+* **Allow Self-Loop**:
+
+    A checkbox option that determines whether the selected workflow can invoke itself during execution.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - **List**: A list of items in string form that the workflow will process. The list is separated by the markdown divider `---`.
+
+  Example:
+  ```
+  item1
+  ---
+  item2
+  ---
+  item3
+  ```
+
+  - **Input**: The input data to be passed to input of the selected workflow.
+
+- **Outputs**:
+  - This node does not produce any direct outputs. It executes the selected workflow for each item in the list.
+
+## Use Case Examples
+1. **Bulk Data Processing**:
+
+    If you have a list of customer records that need to be updated, you can use this node to run a workflow that processes each record individually, ensuring that all updates are applied efficiently.
+
+2. **Automated Reporting**:
+
+    For a monthly report, if you have a list of sales figures, you can invoke a reporting workflow for each entry in the list. This can generate detailed reports automatically based on the sales data.
+
+3. **Content Personalization**:
+
+    In marketing, if you have a list of leads, you can use this node to personalize outreach campaigns by running a workflow that customizes messages for each lead based on their profile.
+
+4. **Task Assignment**:
+
+    In project management, if you have a list of tasks, you can use this node to assign each task to the appropriate team member by invoking a workflow that handles task assignments.
+
+## Error Handling and Troubleshooting
+- **Selected Workflow Input Inconsistency**:
+
+    If the input data provided to the selected workflow does not match the expected input format, it might be because the selected workflow does not have the latest saved version deployed. This node only triggers deployed workflow instead of the latest saved version.
+
+- **Execution Errors**:
+
+    If the node fails to execute for any item, check the deployment run logs for that workflow for error messages. This can help identify whether the issue is with the input data or the workflow itself.
+
+If you experience issues that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Workflow Invocation Node"
+    href="/pathways/workflow-invocation"
+  >
+    Run a selected workflow on each item in a list
+  </Card>
+</CardGroup>

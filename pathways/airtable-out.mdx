@@ -1,0 +1,73 @@
+---
+title: 'Airtable Output Node'
+description: 'Add records to Airtable from your workflow'
+---
+
+## Overview
+The Airtable Output Node is a component of the Pathlit workflow builder that allows users to send data from their workflows directly into an Airtable table. This node connects to your Airtable account and enables you to add new records to a specified table, making it easy to manage and update your Airtable data seamlessly.
+
+## Configuration Parameters
+
+To set up the Airtable Output Node, you need to sign in to airtable and then select the table you want to add records to. After selecting the table, you will see a list of input fields each corresponding to a column in the table. You can then map the input fields to the corresponding columns in the table using the `{node-name output-port-name}` syntax.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  - This node requires input data to be mapped to the fields (table columns) from the Airtable table selected. How the mapping is done is dependent on the structure of the data you want to send to Airtable. You can have a single input connection mapped to multiple fields or multiple input connections each mapped to a single field. But usually, the number of input connections (incoming edges) should match the number of fields in the table so that each field gets the corresponding data.
+
+- **Outputs**:
+
+  - The output will be a string containing the URL to the newly created record in Airtable.
+
+## Use Case Examples
+1. **Data Management**:
+
+    If you are running a sales campaign and need to log new leads, you can use the Airtable Output Node to add each new lead's information directly into your Airtable table. This ensures that your lead data is always up-to-date without manual entry.
+
+2. **Project Tracking**:
+
+    In a project management scenario, you may want to track tasks as they are completed. By using this node, you can automatically add completed tasks to an Airtable table, helping your team stay organized and informed.
+
+3. **Customer Feedback Collection**:
+
+    For businesses collecting customer feedback, you can configure this node to add feedback submissions to an Airtable table. This enables easy analysis and tracking of customer sentiments over time.
+
+4. **Event Registrations**:
+
+    If you are hosting events and want to keep track of registrations, you can use the Airtable Output Node to automatically log participant details into your Airtable database, simplifying event management.
+
+## Error Handling and Troubleshooting
+- **Invalid Data Types**:
+
+    If the data types of the fields do not match what Airtable expects, you may receive an error. Double-check that the values you are sending correspond to the correct types defined in your Airtable table.
+
+If you encounter any issues with the Airtable Output Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-input"
+  >
+    Import table data from Airtable into your workflow
+  </Card>
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to Slack channels from your workflow
+  </Card>
+  <Card
+    title="Gmail Send Node"
+    href="/pathways/gmail-send"
+  >
+    Send emails through Gmail from your workflow
+  </Card>
+</CardGroup>

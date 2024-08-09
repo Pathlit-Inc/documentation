@@ -1,0 +1,58 @@
+---
+title: 'Audio Transcription Node'
+description: 'Convert audio files into text transcripts'
+---
+
+## Overview
+The Audio Transcription Node is a feature within the Pathlit workflow builder that allows users to convert audio files into written text. This node leverages the AssemblyAI service to transcribe audio recordings, making it useful for various applications such as note-taking, content creation, and accessibility enhancements.
+
+## Configuration Parameters
+
+To set up the Audio Transcription Node, you need to configure the following parameters:
+
+* **Method**:
+
+    The transcription method to use. Currently, the only available option is "AssemblyAI".
+
+* **Audio Input**:
+
+    Upload or record the audio file that you want to transcribe.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+
+  The output will be a string containing the transcribed text from the audio file.
+
+## Use Case Examples
+1. **Meeting Transcriptions**:
+
+    After a business meeting, you can use the Audio Transcription Node to create a written record of the discussion. The transcription can then be passed to a LLM for summarization or analysis. Finally, the text can be sent to an email node for distribution to all meeting participants.
+
+2. **Content Creation**:
+
+    If you are a content creator, you can record your thoughts or ideas and then use this node to transcribe the audio into text. This text can be used for blog posts, articles, or social media content by using it as input to an LLM for further refinement.
+
+## Error Handling and Troubleshooting
+- **No Document Data Provided**:
+
+    If you receive an error stating "No document data provided", ensure that you have uploaded or recorded an audio file before executing the node.
+
+- **Transcription Errors**:
+
+    If there are issues with the transcription process, such as an unclear audio file, you may encounter errors. Make sure the audio quality is good and try again.
+
+If you encounter any issues with the Audio Transcription Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Document Data Node"
+    href="/pathways/document-data"
+  >
+    Manage and process document data
+  </Card>
+</CardGroup>

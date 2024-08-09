@@ -1,0 +1,92 @@
+---
+title: 'Gmail Receive Node'
+description: 'Trigger a workflow when an email is received from a Gmail inbox'
+---
+
+## Overview
+The Gmail Receive Node is an essential component of the Pathlit workflow builder that allows you to trigger workflows based on incoming emails to your Gmail inbox. This node monitors a specified email account and captures the details of any received emails, enabling you to automate processes based on email content.
+
+## Configuration Parameters
+
+To set up the Gmail Receive Node, you need to sign in to your Gmail account. After authentication, you will see the Gmail account you signed into where incoming emails will be monitored.
+
+## Trigger Testing Inputs
+
+A workflow with Gmail Receive Node will only be triggered when it is saved and **deployed**. To test the workflow in the editor, you can run the workflow manually by clicking the **Run Workflow** button. A side panel will open where you can provide the following details:
+
+* **Test Email Sender**:
+
+    A mock email address that the node will use to simulate an incoming email. This is the email address that will be used when testing the node.
+
+* **Test Email Subject**:
+
+    This is the subject line that will be used when testing the node.
+
+* **Test Email Body**:
+
+    This is the body of the email that will be used when testing the node.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - The node outputs the following details from the received email:
+    - **Sender**: The email address of the sender.
+    - **Subject**: The subject line of the email.
+    - **Body**: The content of the email.
+
+## Use Case Examples
+1. **Automated Customer Support**:
+
+    If you receive customer inquiries via email, you can use the Gmail Receive Node to trigger a workflow that automatically replies to the customer or logs their request in a support system.
+
+2. **Lead Management**:
+
+    For sales teams, this node can be used to capture incoming leads from email campaigns. When a potential customer replies, the workflow can automatically add their information to a CRM system.
+
+3. **Notification System**:
+
+    Set up alerts for important emails. For example, if you receive an email with a specific subject or from a particular sender, the workflow can notify your team via another channel like Slack or a project management tool.
+
+4. **Data Collection**:
+
+    Collect information from survey responses sent via email. The node can extract the responses and compile them into a centralized database or spreadsheet for analysis.
+
+## Error Handling and Troubleshooting
+- **Workflow Not Triggered by Email**:
+
+    If your workflow is not triggered by an incoming email, ensure that the workflow is saved and deployed. The workflow will only be triggered when it is deployed.
+
+If you encounter any issues with the Gmail Receive Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Gmail Send Node"
+    href="/pathways/gmail-send"
+  >
+    Automate sending emails from your Gmail account
+  </Card>
+
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to your Slack channels based on email triggers
+  </Card>
+
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Trigger workflows based on incoming emails
+  </Card>
+
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+</CardGroup>

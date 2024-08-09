@@ -1,0 +1,78 @@
+---
+title: 'Document Data Node'
+description: 'Load and process document data for your workflows'
+---
+
+## Overview
+The Document Data Node is a key component of the Pathlit workflow builder that allows users to upload and process document files. This node can extract content from a single uploaded document and optionally include metadata formatted for citations. This makes it useful for various applications, including research, reporting, and content generation.
+
+## Configuration Parameters
+
+To set up the Document Data Node, you need to configure the following parameters:
+
+* **Upload Files**:
+
+    Upload the document file that you want to process. Currently supported file types include `.pdf`, `.docx`, `.txt`, `.md` and more. The maximum file size allowed for upload is 10MB.
+
+* **Include Document Metadata for Citations**:
+
+    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - The output will be a string containing the content of the uploaded document. If the metadata option is selected, the output will also include formatted citations.
+
+## Use Case Examples
+1. **Research Document Processing**:
+
+    If you are conducting research and have a document that contains valuable information, you can upload this document using the Document Data Node. The extracted content can then be passed to LLM nodes for analysis and reports generation.
+
+2. **Content Creation**:
+
+    For content creators, this node can be used to load articles or papers and extract relevant sections for reuse in new content. The option to include metadata ensures that sources are properly credited.
+
+3. **Copy Writing**:
+
+    When working on copywriting projects, you can upload reference documents written by you to this node and feed its output to LLM nodes for generating new content using your writing style.
+
+## Error Handling and Troubleshooting
+- **Missing Document**:
+
+    If you receive an error indicating that no document data was provided, ensure that you have uploaded a file before executing the node.
+
+- **Unsupported File Type**:
+
+    If the uploaded file type is not supported, check the allowed file types in the configuration and upload a compatible document.
+
+If you encounter any issues with the Document Data Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import data from Airtable into your workflow
+  </Card>
+  <Card
+    title="Airtable Output Node"
+    href="/pathways/airtable-out"
+  >
+    Explore the possibilities of Pathlit
+  </Card>
+  <Card
+    title="Gmail Send Node"
+    href="/pathways/gmail-send"
+  >
+    Send emails directly from your workflow
+  </Card>
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+</CardGroup>

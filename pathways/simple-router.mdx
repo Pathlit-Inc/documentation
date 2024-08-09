@@ -1,3 +1,107 @@
 ---
-title: Simple Router
+title: 'Simple Router Node'
+description: 'Route input data based on specified prompts and options'
 ---
+
+## Overview
+The Simple Router Node is a versatile component of the Pathlit workflow builder that allows users to direct input data based on a specific prompt and a set of options. This node is particularly useful when you need to make decisions or route data based on conditional logic, enabling more dynamic and responsive workflows.
+
+## Configuration Parameters
+
+To set up the Simple Router Node, you need to configure the following parameters:
+
+* **Model**:
+
+    The language model you want to use for processing the input. Depending on the complexity of the routing decision, you can choose from different models with varying capabilities.
+
+    <Tip>
+    Use a small (Llama 3.1 7B) or cheap (GPT4o) models for simple decisions and a larger model (GPT4, Claude 3.5) for more complex routing logic.
+     </Tip>
+
+* **Prompt**:
+
+    The prompt that will guide the routing decision. It should be clear and specific to ensure accurate responses. Use letter option placeholders (e.g., A, B, C) to reference the options in the prompt.
+
+    Example:
+    ```
+    [Insert text here]
+    What language is the text above written in?
+    A: English
+    B: Spanish
+    C: None of the above
+    ```
+
+* **Options**:
+
+    A list of possible options that the routing decision can select from. These should be clearly defined and correspond to the placeholders in the prompt. At runtime, the option that is the prefix of the model output will be selected.
+
+### Advanced Settings
+
+Advanced settings panel can be expanded by clicking on the settings button on the top right corner of the node. The following additional configurations are available:
+
+
+* **System Prompt**:
+
+    A prompt that defines the behavior of the model and provides context for the routing. The default system prompt is meticulously crafted to guide the model's output effectively. Change this at your own risk.
+
+* **Temperature**:
+
+    A setting that controls the randomness of the model's output. Values range from 0.0 (deterministic) to 2.0 (more random).
+
+    <Tip>
+    Reduce the temperature to 0 for a completely deterministic output.
+    </Tip>
+
+* **Top P**:
+
+    A setting that influences the diversity of the output by limiting the model to a subset of options based on their probabilities.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  - This node accepts input data through a specified input port, which can be any data relevant to the routing decision.
+
+- **Outputs**:
+
+  - The output will be the selected option based on the prompt and the input data, formatted as an XML tag.
+
+## Use Case Examples
+1. **Survey Response Routing**:
+
+    In a survey application, you can use the Simple Router Node to analyze responses and direct them to different processing paths based on the answers provided. For example, if a user selects "Yes" or "No," the workflow can follow different routes for further actions.
+
+2. **Content Personalization**:
+
+    For a marketing campaign, the node can be used to determine the type of content to present to users based on their preferences. By routing users to different content based on their selections, you can enhance engagement and relevance.
+
+3. **Decision Trees**:
+
+    In customer support scenarios, the node can help route inquiries based on keywords or phrases in customer messages. This ensures that requests are directed to the appropriate department or automated response based on the initial input.
+
+## Limitations
+
+- Currently, there are some quirks in the workflow branching logic that may require additional attention to ensure the routing works as intended. Because all nodes are connected by edges denoting the flow of data, the node would only execute once all input nodes finish executing. This means that a node connected to two conditional branches created by the routing node will never execute – one of the input node will never resolve! To work around this, you can manually combine and mix the option of the routing node.
+
+- The Simple Router Node only supports routing based on the prefix of the model output. Ensure that the options are clearly defined and distinct to avoid ambiguity in the routing logic.
+
+
+## Error Handling and Troubleshooting
+- **Invalid Option Errors**:
+
+    If the selected option is invalid or not among the provided options, the node will raise an error. Ensure that your options are correctly defined and match the expected outputs.
+
+- **Prompt Clarity**:
+
+    If the prompt is unclear or ambiguous, the routing may not work as intended. Review and refine the prompt to ensure it effectively guides the routing logic.
+
+If you encounter any issues with the Simple Router Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Language Model Node"
+    href="/pathways/llm"
+  >
+    Generate text based on prompts and options
+  </Card>
+</CardGroup>

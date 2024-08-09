@@ -1,0 +1,66 @@
+---
+title: 'Workflow Invocation Node'
+description: 'Run another workflow as a node in the current workflow'
+---
+
+## Overview
+The Workflow Invocation Node is an essential feature in the Pathlit workflow builder. This node allows users to execute another workflow as part of the current workflow. It is particularly useful for chaining workflows together, enabling complex processes to be automated seamlessly. By using this node, you can enhance the functionality of your workflows and create more dynamic and responsive automation.
+
+## Configuration Parameters
+
+To set up the Workflow Invocation Node, you need to configure the following parameters:
+
+* **Workflow**:
+
+    Select a deployed workflow that you want to run within the current workflow.
+
+* **Allow Self-Loop**:
+
+    A checkbox option that determines whether the selected workflow can invoke itself during execution.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  - **Input**: The input data to be passed to the input of the selected workflow.
+
+- **Outputs**:
+
+  This node does not produce any direct outputs. It simply triggers the selected workflow with the provided input.
+
+## Use Case Examples
+1. **Chaining Workflows**:
+
+    If you have a workflow that collects data and another that processes that data, you can use this node to link the two. The first workflow can pass its output directly to the second workflow for seamless data processing.
+
+2. **Modular Workflow Design**:
+
+    In scenarios where you have repetitive tasks across different workflows, you can create a single workflow for those tasks and invoke it from multiple places. This promotes reusability and simplifies maintenance.
+
+3. **Dynamic Task Execution**:
+
+    If your workflow requires different actions based on user input or conditions, you can use this node to invoke different workflows dynamically based on the situation, making your automation more flexible.
+
+4. **Multi-Step Approval Processes**:
+
+    In a business process where approvals are required at different stages, you can use this node to call an approval workflow at each step, ensuring that the process flows smoothly from one approval to the next.
+
+## Error Handling and Troubleshooting
+- **Workflow Not Selected**:
+
+    If you receive an error stating that no workflow is selected, ensure that you have chosen a valid workflow in the configuration settings.
+
+- **Input Data Issues**:
+
+    If the node fails to execute, check that the input data provided matches the expected format for the selected workflow. Inconsistent data can lead to execution failures.
+
+If you encounter issues that are not addressed in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Workflow Batch Invocation Node"
+    href="/pathways/workflow-batch-invocation"
+  >
+    Run a selected workflow on each item in a list
+  </Card>
+</CardGroup>

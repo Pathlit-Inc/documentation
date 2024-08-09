@@ -1,0 +1,56 @@
+---
+title: 'Slack Message Send Node'
+description: 'Send messages via a Slack bot'
+---
+
+## Overview
+The Slack Message Send Node is a component of the Pathlit workflow builder that allows users to send messages to a specified Slack channel using a Slack bot. This node simplifies communication by enabling automated messaging directly from your workflows, making it ideal for notifications, alerts, or any other form of communication needed in your projects.
+
+## Configuration Parameters
+
+To configure the Slack Message Send Node, you will need to set the following parameters:
+
+* **Channel**:
+
+    The name of the Slack channel where you want to send the message. For example, `general`.
+
+* **Message**:
+
+    The content of the message you want to send. You can customize the message as needed. For example, `Hello, how are you?`.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  Any text input can be passed to the Slack Message Send Node to be embedded in the message content. For example, you can connect it to an LLM node to generate the content of the message.
+
+- **Outputs**:
+  - The output will confirm whether the message was sent successfully, returning a message such as `Message sent successfully`.
+
+## Use Case Examples
+1. **Automated Notifications**:
+
+    If you are running a project and want to keep your team updated, you can set up this node to send automated notifications to a Slack channel whenever a specific event occurs, such as a task completion or a new lead.
+
+2. **Daily Standup Reminders**:
+
+    Use the Slack Message Send Node to remind your team about daily standup meetings. You can schedule the message to be sent at a specific time each day, ensuring everyone is aware and prepared.
+
+3. **Slack Bot**:
+
+    Together with the Slack Trigger Node, you can create a Slack bot that responds to specific messages or commands in a channel. The Slack Message Send Node can be used to send responses from the bot to the channel.
+
+## Error Handling and Troubleshooting
+- **Channel Not Found**:
+
+    If the specified channel does not exist or the bot is not a member of the channel, the message will not be sent. Double-check the channel name and ensure the bot has access.
+
+If you experience any other issues with the Slack Message Send Node that are not addressed in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Slack Trigger Node"
+    href="/pathways/slack-trigger"
+  >
+    Trigger workflows based on Slack events
+  </Card>
+</CardGroup>

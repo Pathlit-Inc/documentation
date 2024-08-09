@@ -1,0 +1,70 @@
+---
+title: 'Scheduler Node'
+description: 'Trigger a workflow according to a datetime or cron schedule'
+---
+
+## Overview
+The Scheduler Node is a component of the Pathlit workflow builder that allows users to trigger workflows based on a specific date and time or according to a defined schedule using cron expressions. This node is useful for automating tasks that need to occur at regular intervals or at specific moments.
+
+## Configuration Parameters
+
+To set up the Scheduler Node, you need to configure the following parameters:
+
+* **Datetime**:
+
+    Select a specific datetime to trigger the workflow. The workflow will run at the specified datetime after deployment.
+
+* **Use Datetime**:
+
+    A checkbox option that allows you to enable scheduling based on the specified datetime.
+
+* **Cron**:
+
+    Enter a cron expression to define a recurring schedule (e.g., * * * * * for every minute). You can use online cron expression generators to create the desired schedule. For example, [Cron Expression Generator](https://crontab.guru/).
+
+* **Use Cron**:
+
+    A checkbox option that allows you to enable scheduling based on the specified cron expression.
+
+<Note>
+One of the two options, either Datetime or Cron, must be selected to trigger the workflow. You cannot choose to use both options simultaneously.
+</Note>
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - The output will be a string representing the current time when the workflow is triggered.
+
+## Use Case Examples
+1. **Automated Reporting**:
+
+    You can set up a report to be generated every week on Monday at 8 AM. By configuring the Scheduler Node with the appropriate cron expression, you can automate this process, saving time and ensuring consistency.
+
+2. **Scheduled Data Syncing**:
+
+    You can use a scheduled workflow to periodically sync from data sources like Airtable or Google Sheets. The new data can be processed by the workflow and outputted to another destination, ensuring that your data is always up-to-date.
+
+## Error Handling and Troubleshooting
+- **Incorrect Cron Expression**:
+
+    If the cron expression is not valid, the node may not trigger as expected. Double-check the syntax of your cron expression to ensure it follows the correct format.
+
+If you encounter any issues with the Scheduler Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Input Node"
+    href="/pathways/input"
+  >
+    Input data into your workflow
+  </Card>
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Trigger workflows based on incoming emails
+  </Card>
+</CardGroup>

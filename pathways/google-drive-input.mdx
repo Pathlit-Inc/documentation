@@ -1,0 +1,66 @@
+---
+title: 'Google Drive Input Node'
+description: 'Import files from Google Drive into your workflow'
+---
+
+## Overview
+The Google Drive Input Node is a part of the Pathlit workflow builder that enables users to import files directly from their Google Drive. This node connects to your Google Drive account, allowing you to retrieve specified files and incorporate them into your workflows seamlessly. Users can also choose to include document metadata for citations if needed.
+
+## Configuration Parameters
+
+To set up the Google Drive Input Node, you need to configure the following parameters:
+
+* **Google Drive File**:
+
+    Select the files you want to import from your Google Drive.
+
+* **Include Document Metadata for Citations**:
+
+    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+
+  The output will be a single string that contains the contents of the imported files. If the metadata option is selected, the output will include formatted citations.
+
+## Use Case Examples
+1. **Document Collection for Analysis**:
+
+    If you have a collection of reports stored in Google Drive, you can use the Google Drive Input Node to import these documents into your workflow. This allows you to analyze the data or compile insights for decision-making.
+
+2. **Content Aggregation for Marketing**:
+
+    If you are running a marketing campaign, you may have various assets like presentations and images stored in Google Drive. This node allows you to import these assets into your workflow, enabling you to create personalized content for your audience.
+
+## Error Handling and Troubleshooting
+- **Unsupported File Type**:
+
+    While most file types are supported, some formats may not be compatible with the Google Drive Input Node. Ensure that the files you are importing are in a supported format. Try converting the file to a different format if needed.
+
+If you encounter any issues with the Google Drive Input Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Box Input Node"
+    href="/pathways/box-input"
+  >
+    Import files from Box into your workflow
+  </Card>
+  <Card
+    title="Document Data Node"
+    href="/pathways/document-data"
+  >
+    Upload files from your computer into your workflow
+  </Card>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import data from Airtable into your workflow
+  </Card>
+</CardGroup>

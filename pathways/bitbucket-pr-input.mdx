@@ -1,0 +1,99 @@
+---
+title: 'Bitbucket PR Input Node'
+description: 'Fetches pull requests from a Bitbucket repository'
+---
+
+## Overview
+The Bitbucket PR Input Node is a feature in the Pathlit workflow builder that enables users to fetch pull requests from a specified Bitbucket repository. This node connects to your Bitbucket account and retrieves the relevant pull request data, making it simple to integrate Bitbucket information into your workflows.
+
+## Configuration Parameters
+
+To set up the Bitbucket PR Input Node, you need to configure the following parameters:
+
+* **Repository URL**:
+
+    The URL of the Bitbucket repository from which you want to fetch pull requests.
+
+* **Creation Date**:
+
+    A dropdown option to filter pull requests based on their creation date. Options include:
+
+    - All time
+    - Today
+    - This week
+    - This month
+    - This year
+
+* **PR State**:
+
+    A dropdown option to filter the pull requests based on their current state. Options include:
+
+    - All
+    - Open
+    - Merged
+    - Declined
+    - Superseded
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+
+  The output will be a JSON string containing a list of pull requests fetched from the specified Bitbucket repository.
+
+## Use Case Examples
+1. **Insight Discovery**:
+
+    If you are managing a software project, you can use the Bitbucket PR Input Node to pull in all open pull requests related to your project and feed this data into an LLM for analysis. This can help you identify trends, bottlenecks, or areas that need attention.
+
+2. **Reporting**:
+
+    For teams that need to generate reports on code contributions or feature release notes, this node can be used to fetch pull requests created in the last month. By passing the data to LLM nodes, the workflow can summarize and breakdown contributions, project progress, and more.
+
+## Error Handling and Troubleshooting
+- **Authentication Issues**:
+
+    Ensure that you have authenticated your Bitbucket account correctly. If you receive an error related to access tokens, re-authenticate to ensure your credentials are valid.
+
+- **Invalid URL**:
+
+    If you encounter an error regarding the repository URL, double-check that the URL is formatted correctly and points to a valid Bitbucket repository.
+
+- **Network Issues**:
+
+    If there are connectivity problems, you may experience delays or failures in data retrieval. Check your internet connection and ensure that Bitbucket's services are operational.
+
+If you encounter any issues with the Bitbucket PR Input Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Bitbucket Output Node"
+    href="/pathways/bitbucket-output"
+  >
+    Explore how to send data back to Bitbucket
+  </Card>
+
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import table data from Airtable into your workflow
+  </Card>
+
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Fetch emails from your Gmail account
+  </Card>
+
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to Slack channels
+  </Card>
+</CardGroup>

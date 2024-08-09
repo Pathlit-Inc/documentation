@@ -1,0 +1,84 @@
+---
+title: 'Webpage Content Extractor Node'
+description: 'Extracts content from a specified webpage.'
+---
+
+## Overview
+The Webpage Content Extractor Node is a tool within the Pathlit workflow builder that enables users to scrape content from a specified webpage. This node can also crawl subpages for additional content, making it a versatile option for gathering web data. Users have the option to include metadata for citations, enhancing the usability of the extracted content.
+
+## Configuration Parameters
+
+To set up the Webpage Content Extractor Node, you need to configure the following parameters:
+
+* **Target Site URL**:
+
+    The URL of the webpage you want to extract content from.
+
+    Example value: `https://www.example.com`
+
+* **Crawl Subpages**:
+
+    A checkbox option that allows you to enable a web crawler to read multiple subpages from the specified URL.
+
+    If enabled, the node will extract content from the main page and its related subpages. At most 10 subpages will be crawled.
+
+* **Include Document Metadata for Citations**:
+
+    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node can take in inputs from other nodes in the workflow to template the URL.
+
+- **Outputs**:
+
+  The output will be a string containing the extracted content in Markdown format. If the metadata option is selected, the output will also include formatted citations.
+
+## Use Case Examples
+1. **Content Gathering for Research**:
+
+    If you are conducting research and need to gather information from multiple articles or websites, you can use this node to extract relevant content quickly. By enabling the crawl subpages option, you can gather data from the main page and its related subpages, ensuring comprehensive coverage of the topic.
+
+2. **Website Analysis**:
+
+    For digital marketing teams, analyzing competitor websites can provide valuable insights. This node allows you to extract content from competitor sites, enabling you to understand their messaging and offerings better.
+
+3. **Dynamic Report Generation**:
+
+    If you are creating reports that require current data from specific web sources, you can automate the content extraction process using this node. By scheduling the extraction, you can ensure your reports are always up-to-date with the latest information.
+
+## Error Handling and Troubleshooting
+- **Network Issues**:
+
+    If you encounter delays or failures in data extraction, ensure that the target website is accessible.
+
+- **Invalid URL**:
+
+    Ensure that the URL provided is correct and starts with "http://" or "https://". An invalid URL will prevent the node from functioning properly.
+
+If you encounter any issues with the Webpage Content Extractor Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Web Search Node"
+    href="/pathways/web-search"
+  >
+    Perform searches on the web to gather information.
+  </Card>
+
+  <Card
+    title="Video Input Node"
+    href="/pathways/video-input"
+  >
+    Download transcript from a given video URL.
+  </Card>
+
+  <Card
+    title="Document Data Node"
+    href="/pathways/document-data"
+  >
+    Extract and manage document data efficiently.
+  </Card>
+</CardGroup>

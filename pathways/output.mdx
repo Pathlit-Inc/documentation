@@ -1,3 +1,36 @@
 ---
-title: 'Output'
+title: 'Output Node'
+description: 'Output data from your workflow'
 ---
+
+## Overview
+The Output Node is a fundamental component of the Pathlit workflow builder that allows users to finalize and output data processed within their workflows. This node collects the data from previous nodes and prepares it for further use or display, ensuring that you can effectively utilize the results of your workflow.
+
+## Configuration Parameters
+
+N/A
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  The Output Node requires input data from other nodes in the workflow.
+
+- **Outputs**:
+
+  There is no real output from the Output Node in the sense that it doesn't produce any data. Instead, it serves as the final step in the workflow, collecting and finalizing the data for display and storage.
+
+  The output will be a single string that contains the concatenated values from all the input data received. The output is displayed on the node itself for easy reference. The display format of the output value can be easily toggled between Markdown and plain text.
+
+## Error Handling and Troubleshooting
+
+If you encounter any issues with the Output Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Input Node"
+    href="/pathways/input"
+  >
+    Input data into your workflow
+  </Card>
+</CardGroup>

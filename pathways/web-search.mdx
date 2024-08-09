@@ -1,0 +1,78 @@
+---
+title: 'Web Search Node'
+description: 'Search the web for answers using a customizable query'
+---
+
+## Overview
+The Web Search Node is a powerful component of the Pathlit workflow builder that allows users to search the internet for information based on a specified query. This node leverages advanced AI models to provide relevant search results, making it an ideal tool for gathering data, insights, or answers to specific questions directly within your workflows.
+
+## Configuration Parameters
+
+To set up the Web Search Node, you need to configure the following parameters:
+
+* **Model**:
+
+    Select the AI model you want to use for the web search.
+
+* **Search Query**:
+
+    Enter the specific query you wish to search for on the web.
+
+* **Temperature**:
+
+    Adjust the randomness of the output. A lower value will make the output more focused and deterministic, while a higher value will introduce more variability.
+
+* **Top P**:
+
+    This parameter controls the diversity of the output by limiting the cumulative probability of the chosen tokens.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node can be connected to other nodes in your workflow to receive input data that can be used to template the search query.
+
+- **Outputs**:
+
+  The output will be a string containing the results of the web search based on the specified query.
+
+## Use Case Examples
+1. **Research and Information Gathering**:
+
+    If you are conducting market research, you can use the Web Search Node to find the latest trends and statistics relevant to your industry. Simply enter your search terms, and the node will return pertinent information that you can analyze further.
+
+2. **Content Creation**:
+
+    For content creators, this node can assist in finding inspiration or factual data to support articles or blog posts. By entering a specific topic or question, you can quickly gather information to enhance your writing.
+
+3. **Customer Support**:
+
+    In a customer service context, you can use this node to search for answers to frequently asked questions. This allows support agents to provide quicker and more accurate responses to customer inquiries.
+
+4. **Competitive Analysis**:
+
+    Businesses can utilize this node to monitor competitors by searching for their latest announcements, product launches, or marketing strategies, helping them stay informed and competitive in the market.
+
+## Error Handling and Troubleshooting
+- **Irrelevant Information Returned**:
+
+    If your search yields poor results, consider refining your query for better accuracy.
+
+    <Tip>
+    Keep your query under 2 sentences to get the best output quality
+    </Tip>
+
+- **Network Issues**:
+
+    Connectivity problems may hinder search results. Ensure that external web services are operational.
+
+If you encounter any issues with the Web Search Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Web Extractor Node"
+    href="/pathways/web-extract"
+  >
+    Extract content from web pages and related subpages.
+  </Card>
+</CardGroup>

@@ -1,0 +1,71 @@
+---
+title: 'Text to Image Node'
+description: 'Generate images based on text prompts'
+---
+
+## Overview
+The Text to Image Node is a powerful feature in the Pathlit workflow builder that allows users to create images from textual descriptions. By simply providing a text prompt, this node utilizes advanced AI models to generate a corresponding image, which can be used in various applications such as marketing materials, presentations, or creative projects.
+
+## Configuration Parameters
+
+To set up the Text to Image Node, you need to configure the following parameters:
+
+* **Model**:
+
+    Select the AI model that will generate the image.
+
+    Example values:
+
+    - `DALL-E`
+    - `Stable Diffusion`
+
+* **User Prompt**:
+
+    Enter a text description that details what you want the image to depict.
+
+    Example value:
+
+    - `A dynamic and fresh workspace with glass walls over a sunny day.`
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node requires an input that can be used to interpolate into the user prompt.
+
+- **Outputs**:
+
+  The output will be a string containing a markdown image link to the generated image.
+
+## Use Case Examples
+1. **Marketing Campaigns**:
+
+    A marketing team can use this node to generate unique visuals for their campaigns. By inputting descriptive prompts about the product or service, they can create engaging images that capture attention.
+
+2. **Content Creation**:
+
+    Writers and content creators can enhance their articles or blogs by generating relevant images. For instance, a blog post about remote work can be complemented with an image generated from a prompt describing a modern home office.
+
+3. **Educational Materials**:
+
+    Educators can create visual aids for their lessons. By inputting prompts related to the subject matter, they can generate images that help illustrate concepts, making learning more engaging for students.
+
+## Error Handling and Troubleshooting
+- **Prompt Issues**:
+
+    If the generated image does not match your expectations, check the clarity and detail of your text prompt. More specific prompts often yield better results.
+
+- **Model Selection**:
+
+    Ensure that you select the appropriate model for your needs. Different models may produce varying styles and qualities of images.
+
+If you encounter any issues with the Text to Image Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Document Data Node"
+    href="/pathways/document-data"
+  >
+    Manage and process document data in your workflows
+  </Card>
+</CardGroup>

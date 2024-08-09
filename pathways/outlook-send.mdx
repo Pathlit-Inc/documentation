@@ -1,0 +1,99 @@
+---
+title: 'Outlook Send Node'
+description: 'Send an email via Microsoft Outlook'
+---
+
+## Overview
+The Outlook Send Node is a component of the Pathlit workflow builder that enables users to send emails directly through their Microsoft Outlook account. This node allows you to define recipients, subject lines, and the body content of the email. You also have the option to save the email as a draft instead of sending it right away.
+
+## Configuration Parameters
+
+To set up the Outlook Send Node, you need to configure the following parameters:
+
+* **Recipients**:
+
+    A comma-separated list of valid email addresses without spaces.
+
+    Example:
+    ```
+    someone@example.com, another@example.com
+    ```
+
+* **Subject**:
+
+    The subject line of the email.
+
+    Example:
+    ```
+    Hello!
+    ```
+
+* **Body**:
+
+    The main content of the email.
+
+    Example:
+    ```
+    Hello, how are you?
+    ```
+
+* **Draft**:
+
+    A checkbox option that allows you to save the email as a draft instead of sending it.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  The Outlook Send Node can be connected to other nodes in the workflow to pass data to the email body. For example, you can connect it to an LLM node to generate the content of the email.
+
+- **Outputs**:
+
+  The output will be a status message indicating whether the email was sent successfully or saved as a draft. If a draft is successfully created, the link to the draft will be provided in the output.
+
+## Use Case Examples
+1. **Automated Client Communication**:
+
+    Use the Outlook Send Node to automatically send emails to clients after a specific trigger in your workflow. For instance, once a task is completed, an email can be sent to inform the client of the progress, ensuring timely communication without manual effort.
+
+2. **Event Notifications**:
+
+    You can set up the Outlook Send Node to notify team members of upcoming meetings or events. By configuring the recipients and message body, you can ensure everyone is informed promptly.
+
+3. **Follow-Up Emails**:
+
+    After a lead interacts with your business, use this node to automatically send a follow-up email to check in and provide additional information, enhancing customer engagement.
+
+## Error Handling and Troubleshooting
+- **Invalid Email Addresses**:
+
+    Ensure that all email addresses in the Recipients field are valid and properly formatted. An invalid address can prevent the email from being sent.
+
+If you encounter any issues with the Outlook Send Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Gmail Send Node"
+    href="/pathways/gmail-send"
+  >
+    Send emails via Gmail directly
+  </Card>
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Receive emails directly into your workflow
+  </Card>
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to Slack channels directly
+  </Card>
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+</CardGroup>

@@ -1,3 +1,50 @@
 ---
-title: Text Variable 
+title: 'Text Variable Node'
+description: 'Holds a text value for use in your workflows'
 ---
+
+## Overview
+The Text Variable Node is a component of the Pathlit workflow builder that allows users to define and hold a specific text value. This node can be used to store any string that can be referenced or passed to other nodes in your workflow. It is a simple yet powerful way to manage text data throughout your processes.
+
+## Configuration Parameters
+
+To set up the Text Variable Node, you need to configure the following parameters:
+
+* **Value**:
+
+    The text value you want to store.
+
+    Example value:
+    - "Some text here..."
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node does not require any inputs from the workflow.
+
+- **Outputs**:
+
+  The output will be a single string that contains the text value defined in the configuration.
+
+## Use Case Examples
+1. **Storing User Input**:
+
+    If your workflow requires user input, you can use the Text Variable Node to store that input as a text value for easier testing and development. This can then be turned into a [Workflow Input Node](/pathways/input) for production use.
+
+2. **Configuring Constants**:
+
+    You can use the Text Variable Node to store constants or configuration values that are used across multiple nodes in your workflow. This makes it easier to update these values in one place without having to change them in every node.
+
+## Error Handling and Troubleshooting
+
+If you encounter any issues with the Text Variable Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Input Node"
+    href="/pathways/input"
+  >
+    Input data into your workflow
+  </Card>
+</CardGroup>

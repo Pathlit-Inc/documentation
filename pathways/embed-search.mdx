@@ -1,19 +1,99 @@
 ---
-title: 'Embedding Search'
-description: "Searches through data chunks most similar to the user's query to extract from the document"
+title: 'Embedding Search Node'
+description: 'Search for relevant information from knowledge bases'
 ---
 
-### Fields in Embedding Search
+## Overview
+The Embedding Search Node is a robust feature in the Pathlit workflow builder that enables users to supply context from a [Knowledge Base](/guides/knowledge-base) to LLM nodes. [Knowledge Bases](/guides/knowledge-base) consist of user-uploaded documents or scraped web content that enhance the LLM’s ability to generate relevant and precise responses. This technique, commonly referred to as Retrieval Augmented Generation (RAG), is an effective way to elevate the quality of generated text by providing the model with additional context.
 
-- **Top-N Chunks:** Pick the number of top relevant chunks between 0 and 100
+This node connects to a specified knowledge base and retrieves the most relevant data based on a search query. It is particularly useful for extracting insights or relevant information from large sets of documents.
 
-<Tip>
+## Configuration Parameters
 
-"Top N" refers to the highest or best N items from a list, where N can be any number you choose. For example, if you have a list of movies and you want to see the top 3, you would pick the three movies that are the best or most popular. So, "Top N" simply means selecting the best or most significant items out of a larger group.
+To set up the Embedding Search Node, you need to configure the following parameters:
 
+* **Top-N Chunks**:
 
-</Tip>
-In the context of embedding search, "Top N" refers to selecting the top N results that are most similar to a query based on their [embeddings](/get-started/new-to-gen-ai#embeddings). Embeddings are numerical representations of items (like texts, images, or products) that capture their characteristics in a way that can be processed by computers.
-- **Upload Files:** Upload data from local storage
-- **Search String:** The query string used for embedding search
+    The number of most similar data chunks to extract from the document.
 
+    Example values: 2, 5, 10
+
+    The more chunks you extract, the more information you will receive, but it not all chunks may be relevant. Calling LLMs with irrelevant data can not only lead to slight output quality degregation but also increased processing time and cost. With too few chunks, you may miss out on important information. You can experiment with different values to find the right balance for your use case.
+
+* **Knowledge Base**:
+
+    A dropdown selection to provide context to the search. You must select a knowledge base for the search to work.
+
+    If you have not created a knowledge base yet, you can do so by clicking on the "Create or Manage Knowledge Base" button in the dropdown menu or by visiting the Knowledge Base page from the sidebar. For more information on knowledge base, and how to create and manage them, refer to the [Knowledge Base Guide](/guides/knowledge-base).
+
+* **Search String**:
+
+    The query string used for embedding search.
+
+    Example value: "What are the benefits of AI?" This can be used with a knowledge base of research papers.
+
+* **Include Document Metadata for Citations**:
+
+    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node does not require any specific inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - The output will be a single string that contains the retrieved data chunks based on the search query. If the metadata option is selected, the output will include formatted citations.
+
+## Use Case Examples
+1. **Research Analysis**:
+
+    In a research project, you may need to find specific information or references. By using the Embedding Search Node, you can input your search query and retrieve relevant sections from a large collection of uploaded research papers, streamlining your research process.
+
+2. **Content Recommendation**:
+
+    For content creators, this node can help identify similar articles or documents based on a specific topic. By entering a keyword or phrase, the node can pull in related content, aiding in the creation of well-informed articles.
+
+3. **Customer Support**:
+
+    In a customer support setting, LLM chatbots can use this node to quickly find relevant knowledge base articles from the company website based on customer inquiries. By searching with keywords from the query, chatbots can provide faster and more accurate responses.
+
+4. **Data Insights Extraction**:
+
+    If you have a large dataset and need to extract insights, the Embedding Search Node can help you find specific data points quickly. By setting a search string relevant to your analysis, you can retrieve the most pertinent information without sifting through all the data manually.
+
+## Error Handling and Troubleshooting
+- **Missing Knowledge Base**:
+
+    If you receive an error stating "A knowledge base must be selected," ensure that you have selected a knowledge base from the dropdown menu.
+
+If you encounter any issues with the Embedding Search Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import table data from Airtable into your workflow
+  </Card>
+
+  <Card
+    title="Airtable Output Node"
+    href="/pathways/airtable-out"
+  >
+    Export your workflow data back to Airtable
+  </Card>
+
+  <Card
+    title="Google Drive Input Node"
+    href="/pathways/google-drive-input"
+  >
+    Import files from Google Drive into your workflow
+  </Card>
+
+  <Card
+    title="Document Data Node"
+    href="/pathways/document-data"
+  >
+    Extract and manage data from various document types
+  </Card>
+</CardGroup>

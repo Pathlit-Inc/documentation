@@ -1,0 +1,64 @@
+---
+title: 'Slack Trigger Node'
+description: 'Trigger a workflow when a /run command is sent in a Slack channel'
+---
+
+## Overview
+The Slack Trigger Node is a component of the Pathlit workflow builder that allows users to initiate workflows directly from a Slack channel. By using a specific command, you can trigger a series of actions in your workflow, making it easier to integrate Slack interactions into your processes.
+
+## Configuration Parameters
+
+To set up the Slack Trigger Node, you need to configure the following parameters:
+
+* **Test Channel Name**:
+
+    The name of the Slack channel where the trigger will listen for commands.
+
+    Example value: `general`
+
+* **Test Message**:
+
+    A sample message that will be used when the command is triggered.
+
+    Example value: `Hello, this is a test message!`
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  This node does not take in any inputs from the workflow.
+
+- **Outputs**:
+
+  - **Channel Name**: The name of the Slack channel from which the command was sent.
+
+  - **Message**: The message that triggered the workflow.
+
+## Use Case Examples
+1. **Automated Responses**:
+
+    When a user sends a command in Slack, the Slack Trigger Node can initiate an automated response or action, such as sending a report or updating a task. This is useful for teams that rely on Slack for communication and want to streamline their workflow processes.
+
+2. **Workflow Initiation**:
+
+    Imagine a scenario where a team needs to start a project update process. By typing a specific command in a Slack channel, they can trigger the entire workflow without leaving the Slack environment, ensuring quick and efficient project management.
+
+3. **Event Notifications**:
+
+    You can set up the Slack Trigger Node to listen for commands that notify team members about important events or updates. For instance, when a new lead is added to a CRM, a team member can send a command in Slack to trigger notifications to the relevant team members.
+
+## Error Handling and Troubleshooting
+- **Command Not Recognized**:
+
+    If the command sent in Slack is not recognized, ensure that the command syntax is correct and that the Slack Trigger Node is properly configured to listen to the specified channel.
+
+If you encounter any issues with the Slack Trigger Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to Slack channels or users.
+  </Card>
+</CardGroup>
