@@ -1,0 +1,127 @@
+---
+title: "Introduction to Nodes"
+description: 'Learn about the different nodes in Pathlit'
+---
+
+## Overview
+Nodes are the building blocks of a workflow in Pathlit. Each node performs a specific task or operation, and they can be connected to create a sequence of actions. By combining different nodes, users can design custom workflows to automate tasks, process data, and generate insights.
+
+Each node has its own set of configuration parameters, inputs, and outputs. The configuration parameters define how the node behaves, while the inputs and outputs determine how data flows between nodes in the workflow. Understanding the purpose and functionality of each node is essential for creating effective workflows in Pathlit.
+
+## Types of Nodes
+Nodes in Pathlit are categorized based on their functionality and purpose. Here are some common types of nodes you may encounter:
+
+### Triggers
+Trigger nodes initiate the execution of a workflow based on specific events or conditions. They can be scheduled to run at regular intervals, triggered by external events, or activated manually by users.
+
+### Data sources
+Data source nodes retrieve data from external services or platforms and make it available for processing within the workflow. Examples include nodes for importing data from Google Drive, Airtable, or performing embedding search using Knowledge Bases.
+
+### Language models
+Language model nodes leverage natural language processing (NLP) models to process text data. They can perform tasks like text generation, sentiment analysis, named entity recognition, and more.
+
+### Image models
+Image model nodes use machine learning models to analyze images and extract information from them. These nodes can perform tasks like object detection, image classification, and image segmentation.
+
+### Action Model
+Action Model nodes are used to perform actions like sending emails, outputting data to external services like airtabled
+
+### Control Flow
+Control Flow nodes manage the flow of execution within a workflow. They can conditionally route data, branch based on specific criteria, and invoke other deployed workflows to create complex automation sequences and looping behaviors.
+
+### Other
+In the Other category, you will find utility node such as the sticky note node, which allows you to add comments or notes to your workflow for documentation purposes.
+
+## Node Documentation
+
+View the documentation for each node type to learn more about their configuration, expected inputs and outputs, use case examples, and error handling.
+
+<CardGroup>
+  <Card title="Airtable Input" href="/pathways/airtable-in">
+    Import data from Airtable into your workflow
+  </Card>
+  <Card title="Airtable Output" href="/pathways/airtable-out">
+    Export data to Airtable from your workflow
+  </Card>
+  <Card title="Audio Transcribe" href="/pathways/audio-transcribe">
+    Transcribe audio files into text
+  </Card>
+  <Card title="Bitbucket PR Input" href="/pathways/bitbucket-pr-input">
+    Import data from Bitbucket pull requests
+  </Card>
+  <Card title="Document Data" href="/pathways/document-data">
+    Upload and manage document data within your workflow
+  </Card>
+  <Card title="Embed Search" href="/pathways/embed-search">
+    Embed real-time search results into your workflow
+  </Card>
+  <Card title="Gmail Receive" href="/pathways/gmail-receive">
+    Receive emails from Gmail into your workflow
+  </Card>
+  <Card title="Gmail Send" href="/pathways/gmail-send">
+    Send emails using Gmail from your workflow
+  </Card>
+  <Card title="Google Drive Input" href="/pathways/google-drive-input">
+    Import files from Google Drive into your workflow
+  </Card>
+  <Card title="Input" href="/pathways/input">
+    General input node for various data types
+  </Card>
+  <Card title="Introduction" href="/pathways/introduction">
+    Introduction to the workflow concepts and nodes
+  </Card>
+  <Card title="Linkedin Output" href="/pathways/linkedin-output">
+    Export data to Linkedin from your workflow
+  </Card>
+  <Card title="Llm" href="/pathways/llm">
+    Utilize language learning models within your workflow
+  </Card>
+  <Card title="Notion Page Output" href="/pathways/notion-page-output">
+    Export data to Notion pages from your workflow
+  </Card>
+  <Card title="Outlook Send" href="/pathways/outlook-send">
+    Send emails using Outlook from your workflow
+  </Card>
+  <Card title="Output" href="/pathways/output">
+    General output node for various data types
+  </Card>
+  <Card title="Scheduler" href="/pathways/scheduler">
+    Schedule tasks and workflows to run at specific times
+  </Card>
+  <Card title="Simple Router" href="/pathways/simple-router">
+    Route data to different paths in your workflow
+  </Card>
+  <Card title="Slack Message Send" href="/pathways/slack-message-send">
+    Send messages to Slack from your workflow
+  </Card>
+  <Card title="Slack Trigger" href="/pathways/slack-trigger">
+    Trigger workflows from Slack messages
+  </Card>
+  <Card title="Sticky Note" href="/pathways/sticky-note">
+    Add sticky notes to your workflow for annotations
+  </Card>
+  <Card title="Summarizer" href="/pathways/summarizer">
+    Summarize text content within your workflow
+  </Card>
+  <Card title="Text Variable" href="/pathways/text-variable">
+    Manage text variables within your workflow
+  </Card>
+  <Card title="Text to Image" href="/pathways/text2image">
+    Convert text descriptions into images
+  </Card>
+  <Card title="Video Input" href="/pathways/video-input">
+    Import video files into your workflow
+  </Card>
+  <Card title="Web Extract" href="/pathways/web-extract">
+    Extract data from web pages into your workflow
+  </Card>
+  <Card title="Web Search" href="/pathways/web-search">
+    Perform web searches and import results into your workflow
+  </Card>
+  <Card title="Workflow Batch Invocation" href="/pathways/workflow-batch-invocation">
+    Invoke multiple instances of workflows in batches
+  </Card>
+  <Card title="Workflow Invocation" href="/pathways/workflow-invocation">
+    Invoke another workflow from within your workflow
+  </Card>
+</CardGroup>
