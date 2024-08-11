@@ -1,0 +1,57 @@
+---
+title: 'Code Execution Node'
+description: 'Execute Python code'
+---
+
+## Overview
+The Code node allows users to dynamically execute a Python code snippet within their workflows. The Python process will have access to all inputs and must output a single expression.
+
+## Configuration Parameters
+
+To set up the Code node, you need to configure the following parameter:
+
+* **Python Code**:
+
+    The Python code you want to execute.
+
+    This code will be executed in an isolated Jupyter Kernel environment as a single notebook cell.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+  Any inputs to the Code node will be passed into the Python environment as the dictionary `inputs`, with the input node display IDs mapped to their respective outputs.
+
+  Example:
+
+  ```python3
+  a = inputs["text-var-0 output"]
+  ```
+
+- **Outputs**:
+
+  The output will be evaluated as the last expression within the block.
+
+  Example:
+
+  ```python3
+  a = inputs["text-var-0 output"]
+
+  # The following string will be the output of the node
+  f'Output: {a}'
+  ```
+
+## Error Handling
+
+Any exceptions thrown within the Python process will be thrown as a workflow error.
+
+Consequently, you may also raise your own exceptions:
+```python3
+a = inputs["text-var-0 output"]
+
+try:
+  a = int(a)
+except:
+  raise Exception("Input is not a valid integer")
+
+a * 2
+```
