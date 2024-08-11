@@ -58,6 +58,7 @@
         "pathways/airtable-out",
         "pathways/audio-transcribe",
         "pathways/bitbucket-pr-input",
+        "pathways/code",
         "pathways/document-data",
         "pathways/embed-search",
         "pathways/gmail-receive",
