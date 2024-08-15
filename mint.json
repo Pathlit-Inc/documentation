@@ -68,6 +68,7 @@
         "pathways/linkedin-output",
         "pathways/llm",
         "pathways/notion-page-output",
+        "pathways/outlook-receive",
         "pathways/outlook-send",
         "pathways/output",
         "pathways/scheduler",
