@@ -1,0 +1,83 @@
+---
+title: 'Outlook Receive Node'
+description: 'Trigger a workflow when an email is received from an Outlook inbox'
+---
+
+## Overview
+The Outlook Receive Node is a component in the Pathlit workflow builder that allows you to automate processes based on incoming emails to your Outlook inbox. This node monitors a specified Outlook email account and captures the details of received emails, enabling you to create workflows triggered by email events.
+
+## Configuration Parameters
+
+### Basic Settings
+* **Email**: 
+    
+    The Outlook email address you want to monitor for incoming emails. You'll need to authenticate with your Microsoft account to set this up.
+
+## Trigger Testing Inputs
+
+To test the workflow in the editor, you can use the following test inputs:
+
+* **Test Email Sender**:
+    
+    A mock email address to simulate the sender of an incoming email. 
+    Example: test@example.com
+
+* **Test Email Subject**:
+    
+    A sample subject line to use when testing the node.
+
+* **Test Email Body**:
+    
+    The content of the email to use for testing purposes.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node doesn't require any inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - **Sender**: The email address of the sender.
+  - **Subject**: The subject line of the email.
+  - **Body**: The content of the email.
+
+## Error Handling and Troubleshooting
+
+- **Authentication Issues**: 
+    
+    If the node isn't receiving emails, ensure that you've properly authenticated with your Microsoft account and that the correct email address is specified.
+
+- **Workflow Not Triggering**: 
+    
+    Remember that the workflow needs to be saved and deployed for it to be triggered by actual emails. In the editor, use the test inputs to simulate email reception.
+
+If you encounter persistent issues with the Outlook Receive Node, please contact our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Gmail Receive Node"
+    href="/pathways/gmail-receive"
+  >
+    Trigger workflows based on incoming emails in Gmail
+  </Card>
+
+  <Card
+    title="Outlook Send Node"
+    href="/pathways/outlook-send"
+  >
+    Send emails from your Outlook account
+  </Card>
+
+  <Card
+    title="Slack Trigger Node"
+    href="/pathways/slack-trigger"
+  >
+    Trigger workflows based on Slack messages or events
+  </Card>
+
+  <Card
+    title="Scheduler Node"
+    href="/pathways/scheduler"
+  >
+    Schedule workflows to run at specific times or intervals
+  </Card>
+</CardGroup>
