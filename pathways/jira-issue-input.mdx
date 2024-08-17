@@ -1,4 +1,99 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: 'Jira Issue Input Node'
+description: 'Trigger a workflow when an issue is created in Jira'
 ---
+
+## Overview
+The Jira Issue Input Node is a powerful component in the Pathlit workflow builder that allows you to automate processes based on new issues created in your Jira project. This node monitors your Jira instance for new issues that match specified criteria and captures the details of these issues, enabling you to create workflows triggered by Jira events.
+
+## Configuration Parameters
+
+### Basic Settings
+* **Jira API Token**: 
+    
+    Your Jira API Token created in the Jira administration console. This is required to authenticate and access your Jira instance.
+
+* **JQL Filter**: 
+    
+    A JQL (Jira Query Language) statement to filter which issues will trigger the workflow. 
+    Example: `Project = JRA AND issuetype = Bug AND assignee = currentUser()`
+
+## Trigger Testing Inputs
+
+To test the workflow in the editor, you can use the following test inputs:
+
+* **Test Issue Key**: 
+    
+    A sample Jira issue key to use when testing the node. 
+    Example: JRA-100
+
+* **Test Issue Summary**: 
+    
+    A sample summary for the test issue.
+
+* **Test Issue Description**: 
+    
+    A sample description for the test issue.
+
+## Expected Inputs and Outputs
+- **Inputs**:
+  - This node doesn't require any inputs from other nodes in the workflow.
+
+- **Outputs**:
+  - **issue_key**: The unique identifier of the Jira issue (e.g., JRA-100).
+  - **issue_summary**: The summary or title of the Jira issue.
+  - **issue_description**: The detailed description of the Jira issue.
+
+## Use Case Examples
+
+1. **Bug Tracking Automation**: 
+    
+    Set up a workflow that automatically notifies the development team on Slack when a new high-priority bug is created in Jira.
+
+2. **Task Assignment**: 
+    
+    Create a workflow that automatically assigns new tasks to team members based on the issue type or project.
+
+3. **Reporting**: 
+    
+    Trigger a workflow that updates a Google Sheet or generates a report when new issues are created, helping with project tracking and analytics.
+
+## Error Handling and Troubleshooting
+
+- **Authentication Issues**: 
+    
+    If the node isn't receiving issues, ensure that you've entered the correct Jira API Token and that you have the necessary permissions in your Jira instance.
+
+- **JQL Filter Issues**: 
+    
+    If you're not seeing the expected issues triggering the workflow, double-check your JQL filter. You can test your JQL in Jira's issue search to verify it's returning the correct results.
+
+- **Workflow Not Triggering**: 
+    
+    Remember that the workflow needs to be saved and deployed for it to be triggered by actual Jira issues. In the editor, use the test inputs to simulate issue creation.
+
+If you encounter persistent issues with the Jira Issue Input Node, please contact our [support team](mailto:dev@pathlit.ai) for assistance.
+
+## Relevant Nodes
+<CardGroup>
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send notifications to Slack based on Jira issues
+  </Card>
+
+  <Card
+    title="Output Node"
+    href="/pathways/output"
+  >
+    Create custom outputs based on Jira issue data
+  </Card>
+
+  <Card
+    title="LLM Node"
+    href="/pathways/llm"
+  >
+    Use AI to analyze or categorize Jira issues
+  </Card>
+</CardGroup>
