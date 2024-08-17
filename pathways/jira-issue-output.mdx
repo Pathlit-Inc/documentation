@@ -1,0 +1,82 @@
+---
+title: 'Jira Issue Output Node'
+description: 'Create a Jira issue from the input data.'
+---
+
+## Overview
+The Jira Issue Output Node allows you to create a new issue in Jira based on the data provided in your Pathlit workflow. This node integrates with your Jira account, enabling you to generate issues dynamically with content formatted according to your specifications.
+
+## Configuration Parameters
+
+To set up the Jira Issue Output Node, you need to configure the following parameters:
+
+* **Project Key**:
+
+    The key of the Jira project where the new issue will be created.
+
+* **Issue Summary**:
+
+    A brief summary or title for the Jira issue.
+
+* **Issue Description**:
+
+    The detailed description of the Jira issue. This can include formatted text and additional information.
+
+* **Issue Type**:
+
+    The type of issue you want to create (e.g., Task, Bug, Story).
+
+## Expected Inputs and Outputs
+- **Inputs**:
+
+    This node expects input data which will be used to populate the content of the Jira issue summary and description.
+
+- **Outputs**:
+
+    The output will be a single string containing the key of the newly created Jira issue.
+
+## Use Case Examples
+1. **Bug Tracking**:
+
+    When a bug is detected in your system, you can automatically create a Jira issue with details about the bug, including its description, severity, and affected components.
+
+2. **Task Management**:
+
+    For project management, you can use this node to create tasks in Jira based on information from other parts of your workflow, such as client requests or internal planning sessions.
+
+3. **Feature Requests**:
+
+    If you receive feature requests from customers through various channels, you can use this node to automatically create Jira issues to track and prioritize these requests.
+
+4. **Incident Management**:
+
+    In IT operations, you can create Jira issues automatically when incidents are detected, ensuring that they are properly tracked and resolved.
+
+## Error Handling and Troubleshooting
+- **Invalid Project Key**:
+
+    If the specified project key does not exist, the node will fail to create the new issue. Ensure that the project key is correct and exists in your Jira instance.
+
+If you encounter any issues with the Jira Issue Output Node that are not covered in this documentation, please reach out to our support team for assistance.
+
+## Related Nodes
+<CardGroup>
+  <Card
+    title="Airtable Input Node"
+    href="/pathways/airtable-in"
+  >
+    Import table data from Airtable into your workflow
+  </Card>
+  <Card
+    title="Salesforce Node"
+    href="/pathways/salesforce"
+  >
+    Interact with Salesforce CRM data in your workflow
+  </Card>
+  <Card
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
+  >
+    Send messages to Slack channels or users
+  </Card>
+</CardGroup>

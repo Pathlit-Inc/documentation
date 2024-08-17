@@ -65,6 +65,7 @@
         "pathways/gmail-send",
         "pathways/google-drive-input",
         "pathways/input",
+        "pathways/jira-issue-output",
         "pathways/linkedin-output",
         "pathways/llm",
         "pathways/notion-page-output",
