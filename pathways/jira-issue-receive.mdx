@@ -22,7 +22,7 @@ The Jira Issue Input Node is a powerful component in the Pathlit workflow builde
 </Card>
 
 #### Sample JQL Filters
-
+---
 | Description of Filter | Filter |
 |------------------------|--------|
 | Issues assigned to the current user | ```assignee = currentUser()``` |
@@ -37,7 +37,6 @@ The Jira Issue Input Node is a powerful component in the Pathlit workflow builde
 | Epics with unresolved issues | ```issuetype = Epic AND "Epic Link" is not EMPTY``` |
 | Issues created this year, ordered by priority | ```created >= startOfYear() ORDER BY priority DESC``` |
 | Unassigned issues in a specific component | ```assignee = EMPTY AND component = "Frontend"``` |
-| Issues affecting a specific version | ```affectedVersion = "2.0" AND status != Closed``` |
 
 ## Expected Inputs and Outputs
 
