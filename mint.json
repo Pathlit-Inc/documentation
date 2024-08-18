@@ -67,6 +67,7 @@
         "pathways/input",
         "pathways/jira-issue-input",
         "pathways/jira-issue-output",
+        "pathways/jira-issue-receive",
         "pathways/linkedin-output",
         "pathways/llm",
         "pathways/notion-page-output",
