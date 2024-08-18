@@ -1,21 +1,19 @@
 ---
 title: 'Jira Issue Input Node'
-description: 'Trigger a workflow when an issue is created in Jira'
+description: 'Retrieve Jira issues based on a JQL filter'
 ---
 
 ## Overview
-The Jira Issue Input Node is a powerful component in the Pathlit workflow builder that allows you to automate processes based on new issues created in your Jira project. This node monitors your Jira instance for new issues that match specified criteria and captures the details of these issues, enabling you to create workflows triggered by Jira events.
+
+The Jira Issue Input Node is a powerful component in the Pathlit workflow builder that allows you to retrieve Jira issues based on specified criteria. This node uses JQL (Jira Query Language) to filter and fetch issues from your Jira instance, enabling you to create workflows that process or act on specific Jira issues.
 
 ## Configuration Parameters
 
 ### Basic Settings
-* **Jira API Token**: 
-    
-    Your Jira API Token created in the Jira administration console. This is required to authenticate and access your Jira instance.
 
 * **JQL Filter**: 
     
-    A JQL (Jira Query Language) statement to filter which issues will trigger the workflow. 
+    A JQL (Jira Query Language) statement to filter which issues will be retrieved. 
     
     Example: `Project = JRA AND issuetype = Bug AND assignee = currentUser()`
 
@@ -23,70 +21,62 @@ The Jira Issue Input Node is a powerful component in the Pathlit workflow builde
   Read more about JQL's syntax in Atlassian's documentation.
 </Card>
 
-
-## Trigger Testing Inputs
-
-To test the workflow in the editor, you can use the following test inputs:
-
-* **Test Issue Key**: 
-    
-    A sample Jira issue key to use when testing the node. 
-    Example: JRA-100
-
-* **Test Issue Summary**: 
-    
-    A sample summary for the test issue.
-
-* **Test Issue Description**: 
-    
-    A sample description for the test issue.
-
 ## Expected Inputs and Outputs
+
 - **Inputs**:
-  - This node doesn't require any inputs from other nodes in the workflow.
+    
+    This node doesn't require any inputs from other nodes in the workflow.
 
 - **Outputs**:
-  - **issue_key**: The unique identifier of the Jira issue (e.g., JRA-100).
-  - **issue_summary**: The summary or title of the Jira issue.
-  - **issue_description**: The detailed description of the Jira issue.
+    
+    * **issues**: An array of retrieved Jira issues matching the specified JQL filter. **This is returned as a JSON-encoded string**.
+
+<Tip>Use the **Code** node to perform further processing on the issue output structure. Use the `json.loads` utility to decode the JSON string into a Python list.</Tip>
 
 ## Use Case Examples
 
-1. **Bug Tracking Automation**: 
+1. **Issue Analysis**: 
     
-    Set up a workflow that automatically notifies the development team on Slack when a new high-priority bug is created in Jira.
+    Retrieve all open bugs in a specific project and use an LLM node to analyze their descriptions for common patterns.
 
-2. **Task Assignment**: 
+2. **Workload Management**: 
     
-    Create a workflow that automatically assigns new tasks to team members based on the issue type or project.
+    Fetch all issues assigned to a specific user or team and create a summary report of their current workload.
 
-3. **Reporting**: 
+3. **Sprint Planning**: 
     
-    Trigger a workflow that updates a Google Sheet or generates a report when new issues are created, helping with project tracking and analytics.
+    Retrieve all unresolved issues in a project and use this data to assist in sprint planning or backlog grooming.
+
+4. **Automated Reporting**: 
+    
+    Regularly fetch issues matching certain criteria (e.g., high-priority bugs) and generate automated reports or dashboards.
 
 ## Error Handling and Troubleshooting
 
 - **Authentication Issues**: 
     
-    If the node isn't receiving issues, ensure that you've entered the correct Jira API Token and that you have the necessary permissions in your Jira instance.
+    Ensure that you've properly connected your Jira account in the Pathlit platform. If issues persist, try reconnecting your Jira account.
 
 - **JQL Filter Issues**: 
     
-    If you're not seeing the expected issues triggering the workflow, double-check your JQL filter. You can test your JQL in Jira's issue search to verify it's returning the correct results.
+    If you're not seeing the expected issues, double-check your JQL filter. You can test your JQL in Jira's issue search to verify it's returning the correct results.
 
-- **Workflow Not Triggering**: 
+- **No Issues Retrieved**: 
     
-    Remember that the workflow needs to be saved and deployed for it to be triggered by actual Jira issues. In the editor, use the test inputs to simulate issue creation.
+    If the node isn't retrieving any issues, verify that there are actually issues in your Jira instance that match the specified JQL filter.
 
-If you encounter persistent issues with the Jira Issue Input Node, please contact our [support team](mailto:dev@pathlit.ai) for assistance.
+<Note>The Jira Issue Input node is limited to 1000 issues.</Note>
+
+If you encounter persistent issues with the Jira Issue Input Node, please contact our support team for assistance.
 
 ## Relevant Nodes
+
 <CardGroup>
   <Card
-    title="Slack Message Send Node"
-    href="/pathways/slack-message-send"
+    title="LLM Node"
+    href="/pathways/llm"
   >
-    Send notifications to Slack based on Jira issues
+    Use AI to analyze or categorize retrieved Jira issues
   </Card>
 
   <Card
@@ -97,9 +87,9 @@ If you encounter persistent issues with the Jira Issue Input Node, please contac
   </Card>
 
   <Card
-    title="LLM Node"
-    href="/pathways/llm"
+    title="Slack Message Send Node"
+    href="/pathways/slack-message-send"
   >
-    Use AI to analyze or categorize Jira issues
+    Send notifications or reports based on retrieved Jira issues
   </Card>
 </CardGroup>
