@@ -29,6 +29,26 @@ Note that you must have ***administrator privileges*** within your Jira domain t
   Read more about JQL's syntax in Atlassian's documentation.
 </Card>
 
+#### Sample JQL Filters
+
+| Description of Filter | Filter |
+|------------------------|--------|
+| Issues assigned to the current user | ```assignee = currentUser()``` |
+| Issues created in the last 7 days | ```created >= -7d``` |
+| High priority issues in a specific project | ```project = \"Project Name\" AND priority in (High, Highest)``` |
+| Unresolved issues due in the next 14 days | ```resolution = Unresolved AND due <= 14d``` |
+| Issues updated by a specific user in the last month | ```updatedBy = \"John Doe\" AND updated >= -30d``` |
+| Bugs in the current sprint | ```issuetype = Bug AND sprint in openSprints()``` |
+| Issues with a specific label, excluding closed status | ```labels = \"important\" AND status != Closed``` |
+| Tasks assigned to a team (using a custom field) | ```issuetype = Task AND \"Team\" = \"Engineering\"``` |
+| Issues watched by the current user | ```watcher = currentUser()``` |
+| Epics with unresolved issues | ```issuetype = Epic AND \"Epic Link\" is not EMPTY``` |
+| Issues blocked by unresolved issues | ```issueFunction in linkedIssuesOf(\"resolution = Unresolved\", \"is blocked by\")``` |
+| Issues created this year, ordered by priority | ```created >= startOfYear() ORDER BY priority DESC``` |
+| Issues with comments in the last 24 hours | ```comment ~ \"*\" AND commented >= -24h``` |
+| Unassigned issues in a specific component | ```assignee = EMPTY AND component = \"Frontend\"``` |
+| Issues affecting a specific version | ```affectedVersion = \"2.0\" AND status != Closed``` |
+
 
 ## Trigger Testing Inputs
 
