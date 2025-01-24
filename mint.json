@@ -40,6 +40,11 @@
       "name": "Documentation",
       "icon": "book-open",
       "url": "get-started/introduction"
+    },
+    {
+      "name": "Changelog",
+      "icon": "book-open",
+      "url": "changelog"
     }
   ],
   "navigation": [
@@ -87,6 +92,12 @@
         "pathways/web-search",
         "pathways/workflow-batch-invocation",
         "pathways/workflow-invocation"
+      ]
+    },
+    {
+      "group": "Changelog",
+      "pages": [
+        "changelog"
       ]
     }
   ],
