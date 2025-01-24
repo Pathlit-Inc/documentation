@@ -31,74 +31,64 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
       "name": "Documentation",
-      "icon": "book-open",
-      "url": "get-started"
+      "url": "docs"
     },
     {
       "name": "Changelog",
-      "icon": "arrows-rotate",
-      "url": "changelog"
+      "url": "docs/changelog"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
-        "get-started/introduction",
-        "get-started/new-to-gen-ai",
-        "get-started/overview"
+        "docs/get-started/introduction",
+        "docs/get-started/new-to-gen-ai",
+        "docs/get-started/overview"
       ]
     },
     {
       "group": "Pathways",
       "pages": [
-        "pathways/airtable-in",
-        "pathways/airtable-out",
-        "pathways/audio-transcribe",
-        "pathways/bitbucket-pr-input",
-        "pathways/code",
-        "pathways/document-data",
-        "pathways/embed-search",
-        "pathways/gmail-receive",
-        "pathways/gmail-send",
-        "pathways/google-drive-input",
-        "pathways/input",
-        "pathways/jira-issue-input",
-        "pathways/jira-issue-output",
-        "pathways/jira-issue-receive",
-        "pathways/linkedin-output",
-        "pathways/llm",
-        "pathways/notion-page-output",
-        "pathways/outlook-receive",
-        "pathways/outlook-send",
-        "pathways/output",
-        "pathways/scheduler",
-        "pathways/simple-router",
-        "pathways/slack-message-send",
-        "pathways/slack-trigger",
-        "pathways/sticky-note",
-        "pathways/summarizer",
-        "pathways/text-variable",
-        "pathways/text2image",
-        "pathways/video-input",
-        "pathways/web-extract",
-        "pathways/web-search",
-        "pathways/workflow-batch-invocation",
-        "pathways/workflow-invocation"
+        "docs/pathways/airtable-in",
+        "docs/pathways/airtable-out",
+        "docs/pathways/audio-transcribe",
+        "docs/pathways/bitbucket-pr-input",
+        "docs/pathways/code",
+        "docs/pathways/document-data",
+        "docs/pathways/embed-search",
+        "docs/pathways/gmail-receive",
+        "docs/pathways/gmail-send",
+        "docs/pathways/google-drive-input",
+        "docs/pathways/input",
+        "docs/pathways/jira-issue-input",
+        "docs/pathways/jira-issue-output",
+        "docs/pathways/jira-issue-receive",
+        "docs/pathways/linkedin-output",
+        "docs/pathways/llm",
+        "docs/pathways/notion-page-output",
+        "docs/pathways/outlook-receive",
+        "docs/pathways/outlook-send",
+        "docs/pathways/output",
+        "docs/pathways/scheduler",
+        "docs/pathways/simple-router",
+        "docs/pathways/slack-message-send",
+        "docs/pathways/slack-trigger",
+        "docs/pathways/sticky-note",
+        "docs/pathways/summarizer",
+        "docs/pathways/text-variable",
+        "docs/pathways/text2image",
+        "docs/pathways/video-input",
+        "docs/pathways/web-extract",
+        "docs/pathways/web-search",
+        "docs/pathways/workflow-batch-invocation",
+        "docs/pathways/workflow-invocation"
       ]
     },
     {
       "group": "Changelog",
-      "pages": [
-        "changelog/changelog"
-      ]
+      "pages": ["docs/changelog/overview"]
     }
   ],
   "footerSocials": {
