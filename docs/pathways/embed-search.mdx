@@ -1,99 +1,87 @@
 ---
 title: 'Embedding Search Node'
-description: 'Search for relevant information from knowledge bases'
+description: 'Search for similar data chunks using embeddings'
 ---
 
 ## Overview
+
 The Embedding Search Node is a robust feature in the Pathlit workflow builder that enables users to supply context from a [Knowledge Base](/guides/knowledge-base) to LLM nodes. [Knowledge Bases](/guides/knowledge-base) consist of user-uploaded documents or scraped web content that enhance the LLM’s ability to generate relevant and precise responses. This technique, commonly referred to as Retrieval Augmented Generation (RAG), is an effective way to elevate the quality of generated text by providing the model with additional context.
 
 This node connects to a specified knowledge base and retrieves the most relevant data based on a search query. It is particularly useful for extracting insights or relevant information from large sets of documents.
 
 ## Configuration Parameters
 
-To set up the Embedding Search Node, you need to configure the following parameters:
+To configure the Embedding Search Node, you need to set up the following parameters:
 
-* **Top-N Chunks**:
+* **Knowledge Base**
+  Provide the context to the search by selecting a knowledge base. If you haven't created one yet, you can do so by navigating to the Knowledge Base page.
 
-    The number of most similar data chunks to extract from the document.
+* **Search String**
+  The query string used for embedding search.
+  Example: "What are the benefits of AI?"
 
-    Example values: 2, 5, 10
+* **Include Document Metadata for Citations**
+  A checkbox option to include XML formatted metadata for citations in the output.
 
-    The more chunks you extract, the more information you will receive, but it not all chunks may be relevant. Calling LLMs with irrelevant data can not only lead to slight output quality degregation but also increased processing time and cost. With too few chunks, you may miss out on important information. You can experiment with different values to find the right balance for your use case.
+### Advanced Settings
 
-* **Knowledge Base**:
+* **\[VectorDB] Search Type**
+  Choose the search type for the retriever. Options include "Similarity" and "MMR".
 
-    A dropdown selection to provide context to the search. You must select a knowledge base for the search to work.
+* **\[VectorDB] Retrieve Top-N Chunks**
+  Specify the number of most similar data chunks to extract. Range: 0 to 100.
 
-    If you have not created a knowledge base yet, you can do so by clicking on the "Create or Manage Knowledge Base" button in the dropdown menu or by visiting the Knowledge Base page from the sidebar. For more information on knowledge base, and how to create and manage them, refer to the [Knowledge Base Guide](/guides/knowledge-base).
+* **\[VectorDB] Similarity Score Threshold**
+  Set a minimal score threshold for the results. Range: 0.0 to 1.0.
 
-* **Search String**:
+* **\[Reranker] Rerank Model**
+  Select the reranker model. Options include "Cohere Rerank-v3.5", "Cohere Rerank-English-v3.0", and "Cohere Rerank-Multilingual-v3.0".
 
-    The query string used for embedding search.
+* **\[Reranker] Return Top-N Chunks**
+  Specify the number of chunks the reranker returns. Range: 0 to 100.
 
-    Example value: "What are the benefits of AI?" This can be used with a knowledge base of research papers.
-
-* **Include Document Metadata for Citations**:
-
-    A checkbox option that allows you to include XML formatted metadata for citations in the output.
+* **\[Advanced RAG] Max Continuation Radius**
+  Define the maximum number of neighboring continuation chunks to add to the returned chunks. Range: 0 to 20.
 
 ## Expected Inputs and Outputs
-- **Inputs**:
-  - This node does not require any specific inputs from other nodes in the workflow.
 
-- **Outputs**:
-  - The output will be a single string that contains the retrieved data chunks based on the search query. If the metadata option is selected, the output will include formatted citations.
+* **Inputs**:
+
+  * This node expects input data in the form of a query string to perform the search.
+
+* **Outputs**:
+
+  * The output is a string containing the retrieved data chunks based on the search query. If the metadata option is enabled, the output will include formatted citations.
 
 ## Use Case Examples
-1. **Research Analysis**:
 
-    In a research project, you may need to find specific information or references. By using the Embedding Search Node, you can input your search query and retrieve relevant sections from a large collection of uploaded research papers, streamlining your research process.
+1. **Research Analysis**
+   Use this node to quickly find specific information or references within a large collection of research documents, streamlining your research workflow.
 
-2. **Content Recommendation**:
+2. **Content Recommendation**
+   Content creators can use this node to identify similar articles or documents, aiding in the development of well-researched and informed content.
 
-    For content creators, this node can help identify similar articles or documents based on a specific topic. By entering a keyword or phrase, the node can pull in related content, aiding in the creation of well-informed articles.
+3. **Customer Support**
+   Enhance customer support by enabling chatbots to search and retrieve relevant knowledge base articles, providing quick and accurate responses to customer inquiries.
 
-3. **Customer Support**:
-
-    In a customer support setting, LLM chatbots can use this node to quickly find relevant knowledge base articles from the company website based on customer inquiries. By searching with keywords from the query, chatbots can provide faster and more accurate responses.
-
-4. **Data Insights Extraction**:
-
-    If you have a large dataset and need to extract insights, the Embedding Search Node can help you find specific data points quickly. By setting a search string relevant to your analysis, you can retrieve the most pertinent information without sifting through all the data manually.
+4. **Data Insights Extraction**
+   Extract specific insights from large datasets by setting a relevant search string, allowing for efficient data analysis without manual data sifting.
 
 ## Error Handling and Troubleshooting
-- **Missing Knowledge Base**:
 
-    If you receive an error stating "A knowledge base must be selected," ensure that you have selected a knowledge base from the dropdown menu.
+* **Missing Knowledge Base**
+  If you encounter an error stating "A knowledge base must be selected," ensure that you have selected a knowledge base from the dropdown menu.
 
-If you encounter any issues with the Embedding Search Node that are not covered in this documentation, please reach out to our [support team](mailto:dev@pathlit.ai) for assistance.
+If you experience any other issues with the Embedding Search Node not covered here, please contact our [support team](mailto:dev@pathlit.ai) for further assistance.
 
 ## Related Nodes
+
 <CardGroup>
-  <Card
-    title="Airtable Input Node"
-    href="/pathways/airtable-in"
-  >
-    Import table data from Airtable into your workflow
-  </Card>
-
-  <Card
-    title="Airtable Output Node"
-    href="/pathways/airtable-out"
-  >
-    Export your workflow data back to Airtable
-  </Card>
-
-  <Card
-    title="Google Drive Input Node"
-    href="/pathways/google-drive-input"
-  >
-    Import files from Google Drive into your workflow
-  </Card>
-
-  <Card
-    title="Document Data Node"
-    href="/pathways/document-data"
-  >
+  <Card title="Document Data Node" href="/pathways/document-data">
     Extract and manage data from various document types
+  </Card>
+
+  <Card title="Google Drive Input Node" href="/pathways/google-drive-input">
+    Import files from Google Drive into your workflow
   </Card>
 </CardGroup>
