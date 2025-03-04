@@ -6,6 +6,6 @@ pipelines:
         clone:
           enabled: false
         script:
-          - git clone --bare git@bitbucket.org:Pathlit-Inc/documentation.git
-          - cd documentation.git
+          - git clone --bare git@bitbucket.org:pathlit-inc/onepath-docs.git
+          - cd onepath-docs.git
           - git push --mirror git@github.com:Pathlit-Inc/documentation.git
